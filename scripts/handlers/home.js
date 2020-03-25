@@ -3,7 +3,7 @@ const path = require('path')
 
 function homeHandler(request, response) {
 
-  const filePath = path.join(__dirname, '..', '..', 'index.html');
+  const filePath = path.join(__dirname, '..', "public", 'index.html');
   
   fs.readFile(filePath, (error, file) => {
     if (error) {
@@ -17,4 +17,4 @@ function homeHandler(request, response) {
   })
 }
 
-module.exports = homeHandler
+module.exports = homeHandler;

@@ -1,10 +1,13 @@
-const homeHandler = require("./handlers/home.js");
+const homeHandler = require("./handlers/home");
+const publicHandler = require("./handlers/public");
 
 const router = (request, response) => {
-    if (request.url === "/") {
+    const url = request.url;
+    if (url === "/") {
         homeHandler(request, response);
-    } 
-    else if(request.url === "/blog-update" && request.method === "POST") {
+    } else if(url.includes("public")) {
+        publicHandler(request, response);
+    }else if(request.url === "/blog-update" && request.method === "POST") {
         console.log(request.body);
     }else {
         response.writeHead(404, { "content-type": "text/html" })
