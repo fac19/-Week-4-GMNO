@@ -1,0 +1,25 @@
+{
+  "name": "-week-4-gmno",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/server.js",
+  "scripts": {
+    "test": "node test.js | tap-spec",
+    "start": "node scripts/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac19/-Week-4-GMNO.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac19/-Week-4-GMNO/issues"
+  },
+  "homepage": "https://github.com/fac19/-Week-4-GMNO#readme",
+  "devDependencies": {
+    "supertest": "^4.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.13.2"
+  }
+}
