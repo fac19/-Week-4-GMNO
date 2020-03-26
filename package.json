@@ -1,11 +1,12 @@
 {
-  "name": "-week-4-gmno",
+  "name": "week-4-gmno",
   "version": "1.0.0",
   "description": "",
-  "main": "scripts/server.js",
+  "main": "source/server.js",
   "scripts": {
-    "test": "node test.js | tap-spec",
-    "start": "node scripts/server.js"
+    "test": "node tests/test.js | tap-spec",
+    "wintest": "node tests/test.js",
+    "start": "node source/server.js"
   },
   "repository": {
     "type": "git",
