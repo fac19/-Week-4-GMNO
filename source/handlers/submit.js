@@ -1,8 +1,5 @@
 const templates = require("../temp")
 const { parse } = require('querystring');
-// Global Arrays
-let blogPostArr = []; 
-let submitHTML = [];
 
 function submitHandler(request, response) {
     let bodyContent = '';
@@ -13,17 +10,12 @@ function submitHandler(request, response) {
 
     request.on("end", () => {
         const blogEntryObj = parse(bodyContent);
-        blogPostArr.push(blogEntryObj); 
 
         response.writeHead(200, {
             "content-type": "text/html"
         });
-        
-        // only print the last element of the array 
-        let blogPostArrLast = blogPostArr[blogPostArr.length-1];
-        
-        submitHTML = templates.submit(blogPostArrLast['title'], blogPostArrLast["user-name"], blogPostArrLast['textBox']);
-        console.log(blogPostArr); 
+
+        let submitHTML = templates.submit(blogEntryObj['title'], blogEntryObj["user-name"], blogEntryObj['textBox']); 
         response.end(submitHTML);
     })
 
