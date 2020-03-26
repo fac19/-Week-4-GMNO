@@ -10,3 +10,4 @@ document.querySelector("form").onkeypress = function(e) {
       e.preventDefault(); // do not disable default enter behaviour on message textarea
     }
   };
+

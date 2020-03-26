@@ -1,5 +1,17 @@
+
+// https://stackoverflow.com/questions/58264703/nodejs-how-to-insert-an-element-in-a-html-document-using-javascript
+
+
 function submitHandler(request, response){
+
+const fs = require('fs');
+const parse = require('node-html-parser').parse; 
+//^ used to parse the HTML file
+
+// fs.readFile('index.html', 'utf8', () ;)
+
 let body = "";
+
 //call back runs everytime the stream has the next bits of data
 request.on("data", stream =>{
     body += stream;
@@ -10,6 +22,7 @@ request.on("end", () => {
     const data = new URLSearchParams(body);
     const name = data.get("user-name");
     const textBody = data.get("text-body");
+
     console.log(textBody); 
     response.writeHead(200, {"content-type": "text/html"});
     response.end(`<h1>Cheers for the submission ${name}</h1>`);
