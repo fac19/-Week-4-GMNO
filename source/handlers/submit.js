@@ -1,3 +1,9 @@
+const templates = require("../temp")
+const { parse } = require('querystring');
+// Global Arrays
+let blogPostArr = []; 
+let submitHTML = [];
+
 function submitHandler(request, response) {
     let bodyContent = '';
 
@@ -6,22 +12,25 @@ function submitHandler(request, response) {
     })
 
     request.on("end", () => {
-        console.log(bodyContent);
-        // const bodyData = new URLSearchParams(bodyContent);
-        // const name = bodyData.get("user-name");
-        // const title = bodyData.get("title");
-        // const text = bodyData.get("textBox");
+        const blogEntryObj = parse(bodyContent);
+        blogPostArr.push(blogEntryObj); 
 
         response.writeHead(200, {
             "content-type": "text/html"
         });
-        response.end(`<h1>hi</h1>`)
+        
+        // only print the last element of the array 
+        let blogPostArrLast = blogPostArr[blogPostArr.length-1];
+        
+        submitHTML = templates.submit(blogPostArrLast['title'], blogPostArrLast["user-name"], blogPostArrLast['textBox']);
+        console.log(blogPostArr); 
+        response.end(submitHTML);
     })
 
     response.on("error", error => {
         console.log(error);
         response.writeHead(500, {
-            "content-type": text / html
+            "content-type": "text/html"
         });
         const html = `<h1>Wow that's really broken huh</h1>`;
         response.end(html);
