@@ -1,10 +1,11 @@
-*{
-    background-color: red;
+.main {
+    font-family: "Karla", sans-serif;
 }
+
 form {
     display: flex;
     flex-direction: column;
+    margin: 10%;
 }
-
 
 
