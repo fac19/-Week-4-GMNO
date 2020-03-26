@@ -5,7 +5,7 @@ const router = (request, response) => {
     if (request.url === "/") {
         homeHandler(request, response);
     } else if (request.url === "/blog-update" && request.method === "POST") {
-        console.log(request.body);
+       // console.log(request.body);
         submitHandler(request, response);
     } else {
         response.writeHead(404, {

@@ -1,3 +1,6 @@
+const templates = require("../temp")
+const { parse } = require('querystring');
+
 function submitHandler(request, response) {
     let bodyContent = '';
 
@@ -6,22 +9,20 @@ function submitHandler(request, response) {
     })
 
     request.on("end", () => {
-        console.log(bodyContent);
-        // const bodyData = new URLSearchParams(bodyContent);
-        // const name = bodyData.get("user-name");
-        // const title = bodyData.get("title");
-        // const text = bodyData.get("textBox");
+        const blogEntryObj = parse(bodyContent);
 
         response.writeHead(200, {
             "content-type": "text/html"
         });
-        response.end(`<h1>hi</h1>`)
+
+        let submitHTML = templates.submit(blogEntryObj['title'], blogEntryObj["user-name"], blogEntryObj['textBox']); 
+        response.end(submitHTML);
     })
 
     response.on("error", error => {
         console.log(error);
         response.writeHead(500, {
-            "content-type": text / html
+            "content-type": "text/html"
         });
         const html = `<h1>Wow that's really broken huh</h1>`;
         response.end(html);
