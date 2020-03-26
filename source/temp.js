@@ -5,6 +5,7 @@ function sharedLayout(bodyContent) {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="public/style.css">
+            <link href="https://fonts.googleapis.com/css?family=PT+Serif|Inconsolata|Karla:400,700&display=swap"rel="stylesheet">
             <title>Blog</title>
         </head>
         <body class="main">
@@ -20,11 +21,11 @@ function home() {
     <section class="form-wrapper">
         <form class="form" id="form" action="/blog-update" method="POST">
             <label class="form__label" for="title">Title:</label>
-            <input class="form__input" type="text" id="title" name="title" placeholder="Type your title">
+            <input class="form__input" type="text" id="title" name="title" placeholder="Type your title" required>
             <label class="form__label" for="user-name">Your Name:</label>
-            <input class="form__input" type="text" id="user-name" name="user-name" placeholder="Type your user name">
-            <label class="form__label" for="textBox">Enter your blog post below.</label>
-            <textarea class="form__input form__textbox" form="form" id="textBox" name="textBox" placeholder="Let your imagination run free..."></textarea>
+            <input class="form__input" type="text" id="user-name" name="user-name" placeholder="Type your user name" required>
+            <label class="form__label" for="textBox">Enter your blog post below:</label>
+            <textarea class="form__textbox" form="form" id="textBox" name="textBox" placeholder="Let your imagination run free..." required></textarea>
             <button class="form__button" type=submit">Submit</button>
         </form>
     </section>`);
@@ -39,8 +40,8 @@ function submit(title, name, textBox) {
         <article class="post">
             <div class="post__info">
                 <h2>${title}</h2>
-                <p>Author: ${name}</p>
-            </div>26
+                <p class="post__info--emph">Author: ${name}</p>
+            </div>
             <div class="post__textbox">
                 <p>${textBox}</p>
             </div>
