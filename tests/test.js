@@ -1,5 +1,5 @@
 const supertest = require("supertest");
-const router = require("./router");
+const router = require("../source/router");
 const test = require("tape");;
 
 test("Home route returns a status code of 200", t => {
@@ -13,18 +13,3 @@ test("Home route returns a status code of 200", t => {
             t.end();
         });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
