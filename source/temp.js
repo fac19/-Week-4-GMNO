@@ -26,7 +26,7 @@ function home() {
             <input class="form__input" type="text" id="user-name" name="user-name" placeholder="Type your user name" required>
             <label class="form__label" for="textBox">Enter your blog post below:</label>
             <textarea class="form__textbox" form="form" id="textBox" name="textBox" placeholder="Let your imagination run free..." required></textarea>
-            <button class="form__button" type=submit">Submit</button>
+            <button class="form__button" aria-label="button to add post" type=submit">Submit</button>
         </form>
     </section>`);
 }
