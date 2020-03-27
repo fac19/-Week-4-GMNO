@@ -1,12 +1,9 @@
-// import { format } from "url";
-
 const message = document.querySelector("#textBox");
 
-
 document.getElementsByClassName("form").onkeypress = function(e) {
-    let key = e.charCode || e.keyCode; // using charCode or keyCode for cross-browser support
+    let key = e.charCode || e.keyCode; 
     if (key == 13 && e.target !== message) {
-      e.preventDefault(); // do not disable default enter behaviour on message textarea
+      e.preventDefault(); 
     }
   };
 
@@ -22,4 +19,3 @@ for(var i=0; i < buttons.length; i++){
 
 
 
-  // <input class="form__input" type="text" id="title" name="title" placeholder="Type your title" required>
