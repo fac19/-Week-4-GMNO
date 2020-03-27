@@ -1,6 +1,6 @@
 # Week 4 Micro Blog Project
 
-Welcome to our [Microblog project]() focusing on writing server side code in Node.JS
+Welcome to our [Microblog project](https://gmno-blogsite.herokuapp.com/) focusing on writing server side code in Node.JS
 
 ![link text](https://media.giphy.com/media/xpxtdcSjOIUSI/giphy.gif)
 
