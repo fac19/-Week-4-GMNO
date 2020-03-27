@@ -8,7 +8,7 @@ const router = (request, response) => {
         homeHandler(request, response);
     } else if (request.url.includes("public")){  
         publicHandler(request, response);
-    } else if (request.url === "/blog-update" && request.method === "POST") {
+    } else if (request.url === "/blog-update" || request.method === "POST") {
         submitHandler(request, response);
     } else {
         response.writeHead(404, {

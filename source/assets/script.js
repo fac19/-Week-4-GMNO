@@ -9,10 +9,8 @@ document.getElementsByClassName("form").onkeypress = function(e) {
 
 
 var buttons = document.querySelectorAll('.post-remove__button');
-
 for(var i=0; i < buttons.length; i++){
   buttons[i].addEventListener('click', function () {
-    console.log(this.parentNode); 
     this.parentNode.remove();
     }, false);
 }

@@ -1,7 +1,7 @@
-function publicHandler(request, response) {
-    const fs = require("fs");
-    const path = require("path");
-  
+const fs = require("fs");
+const path = require("path");
+
+function publicHandler(request, response) {  
     const types = {
       css: "text/css",
       js: "application/javascript",
