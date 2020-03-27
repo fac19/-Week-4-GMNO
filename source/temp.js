@@ -4,14 +4,15 @@ function sharedLayout(bodyContent) {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="public/style.css">
+            <meta name="description" content="Let your imagination run wild with GMNO Blog!">
+            <link rel="stylesheet" href="assets/style.css">
             <link href="https://fonts.googleapis.com/css?family=PT+Serif|Inconsolata|Karla:400,700&display=swap"rel="stylesheet">
             <title>Blog</title>
         </head>
         <body class="main">
             ${bodyContent}
         </body>
-        <script src="public/script.js"></script>
+        <script src="assets/script.js"></script>
     </html>
     `
 }
@@ -19,6 +20,7 @@ function sharedLayout(bodyContent) {
 function home() {
     return sharedLayout(`    
     <section class="form-wrapper">
+        <a class="nav-link" href="/blog-update">Go To Blog</a>
         <form class="form" id="form" action="/blog-update" method="POST">
             <label class="form__label" for="title">Title:</label>
             <input class="form__input" type="text" id="title" name="title" placeholder="Type your title" required>
@@ -31,8 +33,7 @@ function home() {
     </section>`);
 }
 
-
-let str = ''; 
+let str = '<a class="nav-link" href="/">Go Home</a>'; 
 
 function submit(title, name, textBox) {
     let localStr = `
