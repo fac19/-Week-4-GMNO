@@ -7,12 +7,12 @@ function publicHandler(request, response) {
       js: "application/javascript",
     };
   
-    const requestURl = request.url;  // public/style.css
+    const requestURl = request.url;  // assets/style.css
     const pathNames = requestURl.split("/");  // [public, style.css]
     const extension = requestURl.split(".")[1] // [public/style, css]
-    const newPath = path.join(__dirname, "..", ...pathNames); 
-    //console.log(newPath);
+    const newPath = path.join(__dirname, "..", "..", ...pathNames); 
   
+    
     fs.readFile(newPath, (error, file) => {
       if (error) {
         console.log(error);

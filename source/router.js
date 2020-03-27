@@ -6,7 +6,7 @@ const router = (request, response) => {
     
     if (request.url === "/") {
         homeHandler(request, response);
-    } else if (request.url.includes("public")){  
+    } else if (request.url.includes("assets")){  
         publicHandler(request, response);
     } else if (request.url === "/blog-update" || request.method === "POST") {
         submitHandler(request, response);
