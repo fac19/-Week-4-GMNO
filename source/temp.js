@@ -38,13 +38,10 @@ function submit(title, name, textBox) {
     let localStr = `
     <section class="display-post">
         <article class="post">
-            <div class="post__info">
-                <h2>${title}</h2>
+                <h2 class="post__info">${title}</h2>
                 <p class="post__info--emph">Author: ${name}</p>
-            </div>
-            <div class="post__textbox">
-                <p>${textBox}</p>
-            </div>
+                <p class="post__textbox" >${textBox}</p>
+                <button class="post-remove__button" aria-label="button to remove post" type="button">Remove Post</button>
         </article>
     </section>
     `;
@@ -55,7 +52,6 @@ function submit(title, name, textBox) {
 }
 
 function missing() {
-    
 }
 
 module.exports = {
