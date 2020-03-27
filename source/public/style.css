@@ -1,5 +1,5 @@
 :root {
-    --green: #1F6346;
+    --green: rgb(31, 99, 70);
     --pink: rgba(238, 190, 206, 0.49);
     --background: #F2F2F0;
     scroll-behavior: smooth;
