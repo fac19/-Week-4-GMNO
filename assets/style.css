@@ -108,9 +108,16 @@ textarea {
     color: #EEBECE;
 }
 
+.nav-link {
+    margin: 7%;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--green);
+}
 
-@media (max-width: 414px) {
+@media (max-width: 776px) {
     .post-remove__button {
+        font-size: 1.2rem;
         width: 90%;
     }
 }
